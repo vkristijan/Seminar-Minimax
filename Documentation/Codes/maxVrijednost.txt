@@ -1,0 +1,16 @@
+maxVrijednost(stanje, igrač)
+	ako (provjeriKraj(stanje))
+		vrati odrediBodove(stanje, igrač)
+	
+	najboljiPotez = -1
+	najboljiBodovi = -INF
+	
+	za_svaki (potez : mogućiPotezi(stanje, igrač))
+		novoStanje = odigraj(stanje, igrač, potez)
+		bodovi = minVrijednost(novoStanje, sljedećiIgrač(igrač))
+	
+		ako (bodovi > najboljiBodovi)
+			najboljiBodovi = bodovi
+			najboljiPotez = potez
+	
+	vrati najboljiPotez

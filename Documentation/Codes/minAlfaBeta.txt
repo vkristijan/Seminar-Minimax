@@ -1,0 +1,22 @@
+minVrijednost(stanje, igrač, alfa, beta)
+	ako (provjeriKraj(stanje))
+		vrati -odrediBodove(stanje, igrač)
+	
+	najboljiPotez = -1
+	najboljiBodovi = INF
+	
+	za_svaki (potez : mogućiPotezi(stanje, igrač))
+		novoStanje = odigraj(stanje, igrač, potez)
+		bodovi = maxVrijednost(novoStanje, sljedećiIgrač(igrač), alfa, beta)
+	
+		ako (bodovi < najboljiBodovi)
+			najboljiBodovi = bodovi
+			najboljiPotez = potez
+			
+		ako (najboljiBodovi < beta)
+			beta = najboljiBodovi
+		
+		ako (alfa > beta)
+			prekini_petlju
+	
+	vrati najboljiPotez

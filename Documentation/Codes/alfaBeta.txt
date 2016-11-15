@@ -1,0 +1,22 @@
+alfaBeta(stanje, igrač)
+	najboljiPotez = -1
+	najboljiBodovi = -INF
+	
+	alfa = -INF
+	bega = +INF
+	
+	za_svaki(potez : mogućiPotezi(stanje, igrač))
+		novoStanje = odigraj(stanje, igrač, potez)
+		bodovi = maxVrijednost(novoStanje, sljedećiIgrač(igrač), alfa, beta)
+	
+		ako (bodovi > najboljiBodovi){
+			najboljiBodovi = bodovi
+			najboljiPotez = potez
+			
+		ako (najboljiBodovi > alfa)
+			alfa = najboljiBodovi
+		
+		ako (alfa > beta)
+			prekini_petlju
+	
+	vrati najboljiPotez

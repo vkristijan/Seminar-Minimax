@@ -1,0 +1,20 @@
+maxVrijednost(stanje, igrač, dubina, maxDubina)
+	ako (provjeriKraj(stanje))
+		vrati odrediBodove(stanje, igrač)
+	
+	ako (dubina == maxDubina)
+		vrati odrediBodoveHeuristički(stanje, igrač)
+	
+	najboljiPotez = -1
+	najboljiBodovi = -INF
+	
+	dubina = dubina + 1
+	za_svaki (potez : mogućiPotezi(stanje, igrač))
+		novoStanje = odigraj(stanje, igrač, potez)
+		bodovi = minVrijednost(novoStanje, sljedećiIgrač(igrač), dubina, maxDubina)
+	
+		ako (bodovi > najboljiBodovi)
+			najboljiBodovi = bodovi
+			najboljiPotez = potez
+	
+	vrati najboljiPotez
