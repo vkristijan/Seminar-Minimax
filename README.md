@@ -17,6 +17,6 @@ In order to calculate the optimal move, it is not always necessary to check ever
 ## 4 in a row
 The game "4 in a row" is a two player game played on a 6x7 board, as shown in the image below. Each player drops a coin during his turn in one of the 7 rows. The first player to reach 4 connected coins wins. The game is implemented in Java, using the described algorithms for AI. In order to speed up the calculation, a heuristic approach is used.
 
-<img srd="Documentation/Images/4inRow_board.png" width="250">
+<img src="Documentation/Images/4inRow_board.png" width="250">
 
 More detail about everything mentioned above can be found in the documentation.
