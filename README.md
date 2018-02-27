@@ -10,5 +10,13 @@ Those two steps are repeated until a final game state is reached which can be se
 <img src="Documentation/Samples/tttExample.png" width="250">
 
 ## Alpha-Beta pruning
+In order to calculate the optimal move, it is not always necessary to check every possible move. To do so, the current interval for the solution is being calculated. If the current move (on any depth) is better than the current interval in min state, the solution doesn't need to be calculated because min will never choose that move. The same is valid for a move in the max step that is worse than the current interval. This can be seen in the image below.
+
+<img src="Documentation/Images/alpha-beta.png" width="400">
 
 ## 4 in a row
+The game "4 in a row" is a two player game played on a 6x7 board, as shown in the image below. Each player drops a coin during his turn in one of the 7 rows. The first player to reach 4 connected coins wins. The game is implemented in Java, using the described algorithms for AI. In order to speed up the calculation, a heuristic approach is used.
+
+<img srd="Documentation/Images/4inRow_board.png" width="250">
+
+More detail about everything mentioned above can be found in the documentation.
